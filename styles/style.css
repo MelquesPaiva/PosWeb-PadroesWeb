@@ -12,7 +12,6 @@
 }
 
 body {
-    height: 100vh;
     background-color: var(--black);
 }
 
@@ -44,7 +43,7 @@ main {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
-    height: 100%;
+    margin: 10%;
 }
 
 .information {
