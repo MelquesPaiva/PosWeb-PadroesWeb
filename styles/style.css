@@ -1,0 +1,103 @@
+:root {
+    --light-blue: #22D4FD;
+    --black: #000000;
+    --light-gray: #F6F6F6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Krona One;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--black);
+}
+
+.text-light-blue {
+    color: var(--light-blue);
+}
+
+.text-light-gray {
+    color: var(--light-gray);
+}
+
+.btn {
+    padding: 16px;
+    border: 1px solid var(--light-blue);
+    border-radius: 16px;
+}
+
+a.btn {
+    text-decoration: none;
+}
+
+.btn-light-blue {
+    background-color: var(--light-blue);
+    color: var(---black);
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+}
+
+.information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 615px;
+    gap: 40px;
+}
+
+.information .information-title {
+    color: #FFF;
+    font-size: 36px;
+    line-height: 56px;
+    font-weight: 400;
+}
+
+.information .information-sub-title {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+}
+
+.information .information-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.information .information-buttons a {
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    width: 280px;
+    height: 79px;
+}
+
+.image {
+    border: 3px solid var(--light-blue);
+    border-radius: 16px;    
+}
+
+.image img {
+    position: relative;
+    top: 16px;
+    right: 16px;
+    border-radius: 16px;
+    width: 495px;
+    height: 550px;
+}
