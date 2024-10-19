@@ -1,0 +1,155 @@
+:root {
+    --primary-color: #FAF7F0;
+    --dark: #4A4947;
+    --third-color: #B17457;
+    --hover-color: #D8D2C2;
+    --white: #FFF;
+    --secondary-font: "Montserrat", sans-serif;
+    --primary-font: Krona One;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--primary-font);
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark);
+    box-sizing: border-box;
+}
+
+.text-primary-color {
+    color: var(--primary-color);
+}
+
+.text-third-color {
+    color: var(--third-color);  
+}
+
+.btn {
+    padding: 16px;
+    border: 1px solid var(--primary-color);
+    border-radius: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-outline-primary-color {
+    border: 1px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--white);
+}
+
+
+.menu {
+    padding: 2% 0% 0% 12%;
+}
+
+.menu .menu-items {
+    display: flex;
+    align-items: center;
+    height: 29px;
+    gap: 30px;
+}
+
+.menu .menu-items a {
+    font-size: var(--medium-font-size);
+    color: var(--primary-color);
+    font-family: var(--secondary-font);
+    font-weight: 600;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 5% 12%;
+    gap: 8rem;
+}
+
+.information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 615px;
+    gap: 40px;
+}
+
+.information .information-title {
+    color: var(--white);
+    font-size: 36px;
+    line-height: 56px;
+    font-weight: 400;
+}
+
+.information .information-sub-title {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+    text-align: justify;
+    font-family: var(--secondary-font);
+}
+
+.information .information-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.information .information-links .information-links-title {
+    color: var(--third-color);
+    font-family: var(--secondary-font);
+    font-weight: 400;
+}
+
+.information .information-links a {
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    font-family: var(--secondary-font);
+    width: 300px;
+    height: 79px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.information .information-links a:hover {
+    border: 2px solid var(--primary-color);
+    color: var(--white);
+    font-weight: bold;
+    background-color: var(--hover-color);
+}
+
+.image {
+    border: 3px solid var(--primary-color);
+    border-radius: 16px;
+}
+
+.image img {
+    position: relative;
+    top: 16px;
+    right: 16px;
+    border-radius: 16px;
+    width: 495px;
+    height: 550px;
+}
+
+.footer {
+    height: 80px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    font-size: 24px;
+}
