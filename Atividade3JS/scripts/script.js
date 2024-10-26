@@ -1,28 +1,44 @@
 import validateCpf from "./validateCpf.js"
 import validateAge from "./validateAge.js"
+import { validationMessages, errorTypes } from "./messages.js"
 
-const inputValidationFunction = {
+const customizedValidations = {
     "cpf": validateCpf,
     "aniversario": validateAge,
 }
 const requiredInputs = document.querySelectorAll(".principal__formulario input[required]")
+const form = document.querySelector('[data-formulario]')
 
 requiredInputs.forEach(function(input) {
     input.addEventListener('blur', () => validateField(input))
+    input.addEventListener('invalid', (event) => event.preventDefault())
+})
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const listResponse = Object.fromEntries(formData.entries())
+    localStorage.setItem('cadastro', JSON.stringify(listResponse))
+    window.location.href = './abrir-conta-form-2.html'
 })
 
 function validateField(input) {
-    const inputValidation = inputValidationFunction[input.name]
-    if (inputValidation === undefined) {
-        console.log(`Validação não definida para o input ${input.name}`)
+    let message = ''
+    input.setCustomValidity('')
+
+    const inputValidation = customizedValidations[input.name]
+    if (inputValidation) inputValidation(input)
+
+    errorTypes.forEach(error => {
+        if (input.validity[error]) message = validationMessages[input.name][error]
+        if (input.validity.customError && input.validationMessage) message = input.validationMessage
+    })
+
+    if (!input.checkValidity()) {
+        renderErrorMessage(input, message)
         return
     }
-    try {
-        inputValidation(input)
-        clearErrorMessage(input)
-    } catch (e) {
-        renderErrorMessage(input, e.message)
-    }
+
+    clearErrorMessage(input)
 }
 
 function renderErrorMessage(input, errorMessage) {

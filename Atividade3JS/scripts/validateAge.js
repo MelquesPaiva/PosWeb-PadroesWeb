@@ -4,9 +4,13 @@ export default function validateAge(input) {
     }
     const dateOfBirth = new Date(input.value)
     const now = new Date()
-    const birthPlus18 = new Date(dateOfBirth.getUTCFullYear() + 18, dateOfBirth.getUTCMonth(), dateOfBirth.getUTCDate())
+    const birthPlus18 = new Date(
+        dateOfBirth.getUTCFullYear() + 18,
+        dateOfBirth.getUTCMonth(),
+        dateOfBirth.getUTCDate(),
+    )
 
     if (now < birthPlus18) {
-        throw new Error('Você deve ter mais de 18 anos')
+        input.setCustomValidity('Você tem que ter mais de 18 anos')
     }
 }

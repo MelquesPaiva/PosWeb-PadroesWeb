@@ -1,3 +1,5 @@
+import { validationMessages } from "./messages.js"
+
 export default function validateCpf(input) {
     if (input.name !== 'cpf' || input.value.length < 11) {
         return
@@ -5,11 +7,12 @@ export default function validateCpf(input) {
 
     input.value = input.value.replace(/\.|-/g, "")
     if (cpfIsInvalidByRepeatedNumbers(input.value)) {
-        throw new Error('Cpf inválido')
+        input.setCustomValidity('Cpf inválido')
+        return
     }
 
     if (invalidFirstCpfDigit(input.value) || invalidCpfSecondDigit(input.value)) {
-        throw new Error ('Cpf informado não é válido')
+        input.setCustomValidity('Algoritmo de CPF inválido')
     }
 }
 
