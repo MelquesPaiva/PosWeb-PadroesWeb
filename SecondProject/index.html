@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/scripts/tailwind.config.js" type="text/javascript"></script>
+    <script src="scripts/script.js" type="text/javascript" defer></script>
+</head>
+<body data-context="light-mode">
+
+    <header data-context="light-mode">
+        <section class="flex justify-center flex-col items-center py-4 gap-y-4">
+            <h1 class="text-white text-4xl">MenuVital</h1>
+            <p class="text-white text-xl">Facilitando escolhas saudáveis para melhorar vidas</p>
+            <form>
+                <input class="text-sm w-full mb-4 pl-3 rounded border py-2 shadow min-w-96" placeholder="Busque por restaurantes..."/>
+            </form>
+        </section>
+
+        <nav class="flex flex-row gap-2.5 items-center p-4 shadow-lg">
+            <a href="index.html" class="text-white font-bold">Home</a>
+            <a href="login.html" class="text-white font-bold">Login/Cadastro</a>
+            <a href="about-us.html" class="text-white font-bold">Sobre Nós</a>
+        </nav>
+    </header>
+
+    <main class="my-4 py-4 px-10 shadow-lg">
+        <section class="flex flex-row gap-x-4">
+            <button class="outline rounded p-2 outline-system-light font-bold text-system-light transition-all hover:bg-system-light hover:text-white">
+                Mostrar notas
+            </button>
+            <button class="outline rounded p-2 outline-system-light font-bold text-system-light transition-all hover:bg-system-light hover:text-white">
+                Dados Clinicos
+            </button>
+        </section>
+
+        <section class="flex flex-wrap mt-4 gap-y-8" id="sectionRestaurants">
+            <!-- Populate via javascript -->
+        </section>
+    </main>
+
+    <footer class="bg-white text-center p-3 mt-5 fixed bottom-0 w-full">
+        <p>&copy; 2024 MenuVital. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const restaurantsContent = `
+<div class="flex flex-col lg:w-4/12 w-full shadow-lg p-6 rounded gap-4">
+    <h5 class="text-2xl text-white font-bold">Restaurante</h5>
+    <p class="text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+    <div class="flex justify-between items-center">
+        <button class="outline rounded p-2 outline-white font-bold text-white transition-all hover:bg-system-light">
+            <i class="fas fa-heart"></i>
+        </button>
+        <button class="outline rounded p-2 outline-white font-bold text-white transition-all hover:bg-system-light">
+            Abrir Menu
+        </button>
+        <button class="outline rounded p-2 outline-white font-bold text-white transition-all hover:bg-system-light">
+            <i class="fa-solid fa-arrow-up-1-9"></i>
+        </button>
+    </div>
+</div>
+`;
+        const el = document.getElementById('sectionRestaurants');
+        for (i = 0; i < 9; i++) {
+            el.innerHTML += restaurantsContent
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+:root {
+    --light-mode-color: #f36444;
+    --dark-mode-color: #f01945;
+}
+
+body {
+    height: 100vh;
+}
+
+body[data-context=light-mode] {
+    background-color: var(--light-mode-color);
+}
+
+body[data-context=dark-mode] {
+    background-color: var(--dark-mode-color);
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/scripts/tailwind.config.js" type="text/javascript" defer></script>
+    <script src="scripts/register.js" type="module" defer></script>
+</head>
+
+<body data-context="light-mode">
+
+    <header data-context="light-mode">
+        <section class="flex justify-center flex-col items-center py-4 gap-y-4">
+            <h1 class="text-white text-4xl">MenuVital</h1>
+            <p class="text-white text-xl">Facilitando escolhas saudáveis para melhorar vidas</p>
+        </section>
+
+        <nav class="flex flex-row gap-2.5 items-center p-4 shadow-lg">
+            <a href="index.html" class="text-white font-bold">Home</a>
+            <a href="login.html" class="text-white font-bold">Login/Cadastro</a>
+            <a href="about-us.html" class="text-white font-bold">Sobre Nós</a>
+        </nav>
+    </header>
+
+    <main class="flex justify-center items-center h-5/6 flex-col gap-4 px-4">
+        <h1 class="text-system-primary text-4xl">Obrigado por realizar o seu cadastro <span id="new-user-name"></span> e
+            seja bem vindo a MenuVital!</h1>
+        <p class="font-bold text-system-medium">Esperamos que você possa aproveitar tudo que a nossa plataforma tem a
+            oference. Antes de mais nada, que tal
+            fazer o seu <a class="border-solid bg-system-primary text-white px-2 text-lg rounded" href="login.html">Login</a> em
+            nosso sistema?</p>
+    </main>
+
+    <footer class="bg-white text-center p-3 mt-5 fixed bottom-0 w-full">
+        <p>&copy; 2024 MenuVital. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="text/javascript">
+        const userNameSpan = document.querySelector('#new-user-name')
+        const urlParams = new URLSearchParams(window.location.search)
+        if (urlParams.has('name')) {
+            userNameSpan.textContent = urlParams.get('name')
+        } else {
+            userNameSpan.textContent = 'Indefinido'
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/scripts/tailwind.config.js" type="text/javascript" defer></script>
+    <script src="scripts/register.js" type="module" defer></script>
+</head>
+
+<body data-context="light-mode">
+
+    <header data-context="light-mode">
+        <section class="flex justify-center flex-col items-center py-4 gap-y-4">
+            <h1 class="text-white text-4xl">MenuVital</h1>
+            <p class="text-white text-xl">Facilitando escolhas saudáveis para melhorar vidas</p>
+        </section>
+
+        <nav class="flex flex-row gap-2.5 items-center p-4 shadow-lg">
+            <a href="index.html" class="text-white font-bold">Home</a>
+            <a href="login.html" class="text-white font-bold">Login/Cadastro</a>
+            <a href="about-us.html" class="text-white font-bold">Sobre Nós</a>
+        </nav>
+    </header>
+
+    <main class="flex px-6 drop-shadow-2xl justify-center items-center">
+
+        <section
+            class="bg-white p-10 gap-6 mt-10 flex flex-col rounded-lg lg:w-1/2 justify-center lg:rounded-l-none lg:rounded-r-lg">
+            <div class="text-center">
+                <h1 class="text-4xl mb-2">Cadastro</h1>
+                <p class="text-xl text-gray-700 mb-2">Cadastre-se em nosso sistema!</p>
+            </div>
+
+            <form id="form-register" data-form-register>
+                <fieldset>
+                    <label class="text-sm font-bold text-gray-700 mb-2" for="email">Nome</label>
+                    <input class="text-sm w-full mb-2 pl-3 rounded border py-2 shadow" id="name" name="name" type="text"
+                        placeholder="Digite seu nome" required>
+                    <span id="error-name" class="text-sm text-system-primary mb-4"></span>
+                </fieldset>
+                <fieldset>
+                    <label class="text-sm font-bold text-gray-700 mb-2" for="email">Email</label>
+                    <input class="text-sm w-full mb-2 pl-3 rounded border py-2 shadow" id="email" name="email"
+                        type="email" placeholder="Digite seu endereço de email" required>
+                    <span id="error-email" class="text-sm text-system-primary mb-4"></span>
+                </fieldset>
+                <fieldset>
+                    <label class="text-sm font-bold text-gray-700 mb-2" for="password">Senha</label>
+                    <input class="text-sm w-full mb-2 pl-3 rounded border py-2 shadow" id="password" name="password"
+                        type="password" placeholder="Digite sua senha" required>
+                    <span id="error-password" class="text-sm text-system-primary mb-4"></span>
+                </fieldset>
+                <fieldset>
+                    <label class="text-sm font-bold text-gray-700 mb-2" for="birth">Data de Nascimento</label>
+                    <input class="text-sm w-full mb-2 pl-3 rounded border py-2 shadow" id="birth" name="birth"
+                        type="date" placeholder="Nascimento" required/>
+                    <span id="error-birth" class="text-sm text-system-primary mb-4"></span>    
+                </fieldset>
+                <fieldset class="flex flex-col gap-1 my-4">
+                    <span class="text-sm font-bold text-gray-700 mb-2" for="gender">Sexo</span>
+                    <div class="flex lg:flex-row flex-col gap-4">
+                        <div class="input">
+                            <label class="text-sm font-bold text-gray-700 mb-2" for="masculine">Masculino</label>
+                            <input id="masculine" name="gender" type="radio" />
+                        </div>
+                        <div class="input">
+                            <label class="text-sm font-bold text-gray-700 mb-2" for="feminine">Feminino</label>
+                            <input id="feminine" name="gender" type="radio" />
+                        </div>
+                        <div class="input">
+                            <label class="text-sm font-bold text-gray-700 mb-2" for="other">Outro</label>
+                            <input id="other" name="gender" type="radio" />
+                        </div>
+                    </div>
+                </fieldset>
+                <hr class="border my-4" />
+                <button
+                    class="font-bold mb-4 text-white bg-system-primary w-full py-2 rounded-full transition duration-250 ease-in-out shadow-2xl hover:bg-blue-hover"
+                    type="submit">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-white text-center p-3 mt-5 fixed bottom-0 w-full">
+        <p>&copy; 2024 MenuVital. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
