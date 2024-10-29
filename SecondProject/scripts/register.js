@@ -11,7 +11,7 @@ const customizeValidationFunctionsForInputs = {
 requiredInputs.forEach(function (input) {
     validateRequiredInput(input, `error-${input.name}`, customizeValidationFunctionsForInputs)
     input.addEventListener('invalid', (event) => event.preventDefault())
-    input.addEventListener('blur', () => validateRequiredInput(input))
+    input.addEventListener('blur', () => validateRequiredInput(input, `error-${input.name}`, customizeValidationFunctionsForInputs))
 })
 
 form.addEventListener('submit', (event) => {
